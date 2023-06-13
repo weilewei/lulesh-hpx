@@ -51,10 +51,22 @@ set(LULESH_SOURCES
   lulesh-viz.cc
   lulesh.cc)
 
+set(LULESH_FOR_LOOP_SOURCES
+  lulesh-comm.cc
+  lulesh-init.cc
+  lulesh-util.cc
+  lulesh-viz.cc
+  lulesh_for_loop.cc)
 set(LULESH_EXEC lulesh2.0)
+set(LULESH_FOR_LOOP_EXEC lulesh2.0_for_loop)
 
 add_hpx_executable(${LULESH_EXEC}
     ESSENTIAL
     SOURCES 
     ${LULESH_SOURCES}
+)
+add_hpx_executable(${LULESH_FOR_LOOP_EXEC}
+    ESSENTIAL
+    SOURCES 
+    ${LULESH_FOR_LOOP_SOURCES}
 )
