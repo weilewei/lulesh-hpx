@@ -2310,7 +2310,7 @@ int hpx_main(int argc, char *argv[]) {
     std::cout << "Running problem size " << opts.nx
               << "^3 per domain until completion\n";
     std::cout << "Num processors: " << numRanks << "\n";
-    std::cout << "Num hpx threads: " << hpx::get_num_worker_threads() << "\n";
+    std::cout << "Num threads: " << hpx::get_num_worker_threads() << "\n";
     std::cout << "Total number of elements: "
               << ((Int8_t)numRanks * opts.nx * opts.nx * opts.nx) << " \n\n";
     std::cout << "To run other sizes, use -s <integer>.\n";
