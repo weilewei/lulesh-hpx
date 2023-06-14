@@ -2374,6 +2374,7 @@ int hpx_main(int argc, char *argv[]) {
     VerifyAndWriteFinalOutput(elapsed_timeG, *locDom, opts.nx, numRanks);
   }
 
+  std::cout << "#Benchmark " << ((Int8_t)numRanks * opts.nx * opts.nx * opts.nx) << " " << hpx::get_num_worker_threads() << " " << elapsed_time << '\n';
   delete locDom;
 
   return hpx::local::finalize();
