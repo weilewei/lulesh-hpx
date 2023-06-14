@@ -49,12 +49,20 @@ set(LULESH_SOURCES
   lulesh-init.cc
   lulesh-util.cc
   lulesh-viz.cc
-  lulesh.cc)
+)
 
-set(LULESH_EXEC lulesh2.0)
-
-add_hpx_executable(${LULESH_EXEC}
+add_hpx_executable(lulesh2.0
     ESSENTIAL
     SOURCES 
-    ${LULESH_SOURCES}
+    ${LULESH_SOURCES} lulesh.cc
+)
+add_hpx_executable(lulesh2.0_for_loop
+    ESSENTIAL
+    SOURCES 
+    ${LULESH_SOURCES} lulesh_for_loop.cc
+)
+add_hpx_executable(lulesh2.0_for_loop_fork_join
+    ESSENTIAL
+    SOURCES 
+    ${LULESH_SOURCES} lulesh_for_loop_fork_join.cc
 )
