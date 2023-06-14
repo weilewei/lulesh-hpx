@@ -143,6 +143,15 @@ Additional BSD Notice
    advertising or product endorsement purposes.
 
 */
+
+/*
+lulesh_for_loop.cc 
+Whats New ? 
+This code uses hpx::for_loop which works directly on indexes instead of
+using counting iterator to iterate over a sequence of indexes.
+Slight performance improvement due no overheads due to counting iterator 
+with for_each algorithm.
+*/
 #include <hpx/hpx.hpp>
 #include <hpx/local/init.hpp>
 #include <hpx/algorithm.hpp>

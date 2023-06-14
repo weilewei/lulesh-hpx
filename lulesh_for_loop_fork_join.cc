@@ -143,6 +143,20 @@ Additional BSD Notice
    advertising or product endorsement purposes.
 
 */
+/*
+lulesh_for_loop_fork_join.cc 
+Whats New ? 
+This code uses hpx::for_loop which works directly on indexes instead of
+using counting iterator to iterate over a sequence of indexes.
+Slight performance improvement due no overheads due to counting iterator 
+with for_each algorithm.
+Additionally, it uses fork_join executor for the parallel loops.
+By default threads are created and destroyed at the end of each parallel regions,
+or hpx algorithm invocation with par policy. Hence, since there are many 
+invocations of parallel algorithms, the overhead of this thread creation and
+deletion is more. Use of fork_join executor, which will only created during
+the start of HPX runtime significantly reduces thread overheads.
+*/
 #include <hpx/hpx.hpp>
 #include <hpx/local/init.hpp>
 #include <hpx/algorithm.hpp>
